@@ -68,5 +68,5 @@ class Computadora(models.Model):
     notas = models.CharField(max_length=140, blank=True)
 
     def __str__(self):
-        return f"{self.formato} {self.id}"
+        return f"Computadora {self.id} - {self.formato}"
     
