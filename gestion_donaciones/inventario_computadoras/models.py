@@ -10,6 +10,9 @@ class Microprocesador(models.Model):
         choices=OpcionesArquitectura.OPCIONES_ARQUITECTURA
     )
 
+    class Meta:
+        verbose_name_plural = "Microprocesadores"
+
     def __str__(self):
         return self.nombre
 
@@ -20,6 +23,9 @@ class TarjetaMemoriaRam(models.Model):
     tipo = models.CharField(max_length=4, help_text="Ejemplo: DDR2, DDR3, etc.", blank=True)
     velocidad = models.CharField(max_length=10, blank=True)
 
+    class Meta:
+        verbose_name_plural = "Tarjetas de Memoria RAM"
+
     def __str__(self):
         return f"Memoria Ram {self.fabricante} de {self.tamano} MB"
 
@@ -27,6 +33,9 @@ class TarjetaMemoriaRam(models.Model):
 class DiscoRigido(models.Model):
     tamano = models.IntegerField(help_text="Tamaño en GB, ejemplo: 500, 1000, etc.")
     fabricante = models.CharField(max_length=10, blank=True)
+
+    class Meta:
+        verbose_name_plural = "Discos Rígidos"
 
     def __str__(self):
         return f"Disco Rigido {self.fabricante} de {self.tamano}"
@@ -38,6 +47,9 @@ class SistemaOperativo(models.Model):
         max_length=3,
         choices=OpcionesArquitectura.OPCIONES_ARQUITECTURA
     )
+
+    class Meta:
+        verbose_name_plural = "Sistemas operativos"
 
     def __str__(self):
         return f"{self.nombre} {self.arquitectura}"
@@ -66,6 +78,9 @@ class Computadora(models.Model):
                                     choices=OpcionesComputadora.OPCION_SI_NO, 
                                     default=OpcionesComputadora.NO)
     notas = models.CharField(max_length=140, blank=True)
+
+    class Meta:
+        verbose_name_plural = "Computadoras"
 
     def __str__(self):
         return f"Computadora {self.id} - {self.formato}"
