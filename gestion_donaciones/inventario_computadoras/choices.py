@@ -7,7 +7,7 @@ class OpcionesArquitectura:
         (X86, 'x86')
     ]
 
-class OpcionesComputadora:
+class OpComputadora:
     GABINETE = "GABINETE"
     NOTEBOOK = "NOTEBOOK"
     NETBOOK = "NETBOOK"
