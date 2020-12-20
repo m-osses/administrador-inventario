@@ -54,7 +54,7 @@ class Computadora(models.Model):
     procesador = models.ForeignKey(Microprocesador, on_delete=models.PROTECT, blank=True)
     memoria = models.ForeignKey(TarjetaMemoriaRam, on_delete=models.PROTECT, blank=True)
     disco = models.ForeignKey(DiscoRigido, on_delete=models.PROTECT, blank=True)
-    sistema_operativo = models.ForeignKey(SistemaOperativo, on_delete=models.PROTECT, blank=True)
+    sist_op = models.ForeignKey(SistemaOperativo, on_delete=models.PROTECT, blank=True)
     motherboard = models.CharField(max_length=12, choices=OpComputadora.OPCIONES_FUNCIONAMIENTO, blank=True)
     audio = models.CharField(max_length=12, choices=OpComputadora.OPCIONES_FUNCIONAMIENTO, blank=True)
     fuente = models.CharField(max_length=12, choices=OpComputadora.OPCIONES_FUNCIONAMIENTO, blank=True)
